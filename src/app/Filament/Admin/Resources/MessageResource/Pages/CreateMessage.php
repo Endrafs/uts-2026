@@ -8,11 +8,4 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateMessage extends CreateRecord
 {
     protected static string $resource = MessageResource::class;
-
-    protected function getHeaderActions(): array
-    {
-        return [
-            \Filament\Actions::make(),
-        ];
-    }
 }

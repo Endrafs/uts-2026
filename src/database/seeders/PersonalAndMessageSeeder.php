@@ -14,13 +14,13 @@ class PersonalAndMessageSeeder extends Seeder
     public function run(): void
     {
         $personal = Personal::create([
-            'name' => 'Nama Saya',
-            'email' => 'saya@example.com',
+            'name' => 'Saelendra Farell Syahbana',
+            'email' => 'saelendra@example.com',
             'phone' => '+62 812-3456-7890',
-            'address' => 'Jl. Contoh No.1, Kota',
-            'birthdate' => '1990-01-01',
+            'address' => 'Jakarta, Indonesia',
+            'birthdate' => '2003-01-01',
             'avatar_url' => null,
-            'bio' => 'Saya seorang developer web dengan fokus pada Laravel dan Filament. Portofolio saya mencakup proyek aplikasi internal, dashboard admin, dan API publik.',
+            'bio' => 'Mahasiswa Teknik Informatika di Fakultas Ilmu Komputer Universitas Esa Unggul, dengan minat pada pengembangan web, sistem informasi, dan aplikasi interaktif.',
         ]);
 
         Message::create([

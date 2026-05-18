@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Personal;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
 use Illuminate\Support\Facades\Response;
@@ -19,5 +20,6 @@ Livewire::setScriptRoute(function ($handle) {
 / END
 */
 Route::get('/', function () {
-    return view('welcome');
+    $personal = Personal::with('messages')->first();
+    return view('welcome', ['personal' => $personal]);
 });
