@@ -10,6 +10,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Table;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Tables\Actions\DeleteBulkAction;
@@ -20,8 +21,8 @@ class ProjectResource extends Resource
     protected static ?string $model = Project::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-briefcase';
-    protected static ?string $navigationLabel = 'Projects';
-    protected static ?int $navigationSort = 1;
+    protected static ?string $navigationLabel = 'Apa yang Saya Kerjakan';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
@@ -43,6 +44,10 @@ class ProjectResource extends Resource
                         Forms\Components\Textarea::make('description')
                             ->label('Deskripsi')
                             ->rows(5)
+                            ->columnSpan(2),
+                        Forms\Components\Toggle::make('is_active')
+                            ->label('Tampilkan di Website')
+                            ->default(true)
                             ->columnSpan(2),
                         Forms\Components\FileUpload::make('image')
                             ->label('Gambar Project')
@@ -83,6 +88,9 @@ class ProjectResource extends Resource
                     ->label('Judul')
                     ->sortable()
                     ->searchable(),
+                IconColumn::make('is_active')
+                    ->label('Tampil')
+                    ->boolean(),
                 TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->date()

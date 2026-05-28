@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\MessageController;
+use App\Http\Controllers\PortofolioController;
 use Illuminate\Support\Facades\Route;
 use Livewire\Livewire;
-use Illuminate\Support\Facades\Response;
 
 /* NOTE: Do Not Remove
 / Livewire asset handling if using sub folder in domain
@@ -18,6 +19,6 @@ Livewire::setScriptRoute(function ($handle) {
 /*
 / END
 */
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [PortofolioController::class, 'index'])->name('home');
+Route::post('/messages', [MessageController::class, 'store'])->name('messages.store');

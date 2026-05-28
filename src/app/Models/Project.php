@@ -15,9 +15,10 @@ class Project extends Model
         'description',
         'image',
         'erd_image',
+        'is_active',
     ];
 
     protected $casts = [
-        //
+        'is_active' => 'boolean',
     ];
 }
