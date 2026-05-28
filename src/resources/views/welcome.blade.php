@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $personal?->name ? $personal->name . ' | Portofolio' : 'Split-Screen Portofolio - Template HTML Gratis' }}</title>
+    <title>Saelendra Farell Syahbana | Portofolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=Archivo:wght@300;400;600;900&display=swap" rel="stylesheet">
@@ -53,17 +53,30 @@ Free HTML CSS Template
         </ul>
             <div class="mobile-nav-footer">
             <p>Yuk ciptakan sesuatu yang hebat bersama</p>
-            <a href="mailto:{{ $personal?->email ?? 'hello@example.com' }}">{{ $personal?->email ?? 'hello@example.com' }}</a>
+            <a href="mailto:hello@example.com">hello@example.com</a>
         </div>
     </div>
 
     <!-- About Section -->
+    <!-- Work / Portfolio Section -->
+    <section id="work" class="split-container">
+        <div class="work-container">
+            <div class="section-header">
+                <h2>Proyek</h2>
+                <p>Beberapa proyek yang pernah saya kerjakan.</p>
+            </div>
+            <div class="projects-grid">
+                <p style="grid-column: 1/-1; text-align: center; padding: 40px 0;">Belum ada proyek yang ditambahkan.</p>
+            </div>
+        </div>
+    </section>
     @php
-        $firstMessage = $personal?->messages?->first();
-        $contactEmail = $personal?->email ?? 'hello@example.com';
-        $contactPhone = $personal?->phone ?? '+62 812-3456-7890';
-        $contactAddress = $personal?->address ?? 'Jakarta, Indonesia';
-        $profileName = $personal?->name ?? 'Saelendra Farell Syahbana';
+        $profileName = 'Saelendra Farell Syahbana';
+        $contactEmail = 'hello@example.com';
+        $contactPhone = '+62 812-3456-7890';
+        $contactAddress = 'Jakarta, Indonesia';
+        $bio = 'Saya adalah mahasiswa Teknik Informatika yang tertarik dalam pengembangan web, data, dan sistem informasi.';
+        $message = 'Saya sedang membangun portofolio proyek yang menunjukkan kemampuan saya di Laravel, desain web, dan pengembangan aplikasi.';
     @endphp
 
     <section id="about" class="about-section">
@@ -71,8 +84,8 @@ Free HTML CSS Template
             <div class="about-content">
                 <h2>{{ $profileName }}</h2>
                 <p>Mahasiswa Teknik Informatika, Fakultas Ilmu Komputer, Universitas Esa Unggul</p>
-                <p>{{ $personal?->bio ?? 'Saya adalah mahasiswa Teknik Informatika yang tertarik dalam pengembangan web, data, dan sistem informasi.' }}</p>
-                <p>{{ $firstMessage?->content ?? 'Saya sedang membangun portofolio proyek yang menunjukkan kemampuan saya di Laravel, desain web, dan pengembangan aplikasi.' }}</p>
+                <p>{{ $bio }}</p>
+                <p>{{ $message }}</p>
                 <p>Template ini telah diintegrasikan ke dalam aplikasi Laravel agar konten dapat diperbarui dari database dan admin panel.</p>
                 <div class="about-stats">
                     <div class="stat-item">
@@ -243,7 +256,7 @@ Free HTML CSS Template
     </section>
 
     <footer>
-        <p>Hak Cipta © 2026 {{ $personal?->name ?? 'Saelendra Farell Syahbana' }}. Semua hak dilindungi. Desain: <a rel="nofollow" href="https://www.tooplate.com" target="_blank">Tooplate</a></p>
+        <p>Hak Cipta © 2026 Saelendra Farell Syahbana. Semua hak dilindungi. Desain: <a rel="nofollow" href="https://www.tooplate.com" target="_blank">Tooplate</a></p>
     </footer>
 
     <script src="{{ asset('js/tooplate-split-scripts.js') }}"></script>
